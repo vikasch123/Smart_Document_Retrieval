@@ -5,7 +5,7 @@
 # **Smart Document Retrieval System**  
 
 ## **Overview**  
-The **Smart Document Retrieval System** is a simple yet powerful search engine that retrieves the most relevant documents based on user queries. It utilizes **Information Retrieval (IR) techniques** such as **TF-IDF** and **cosine similarity** to rank and fetch documents efficiently.  
+The **Smart Document Retrieval System** is a simple yet powerful search engine that retrieves the most relevant documents based on user queries. It utilizes **Information Retrieval (IR) techniques** such as **TF-IDF** and **cosine similarity** to rank and fetch documents efficiently with regards to the data present
 
 ---
 
