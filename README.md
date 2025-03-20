@@ -1,121 +1,69 @@
+# Smart Document Retrieval System
 
+## Overview
+The **Smart Document Retrieval System** is a Python-based tool that allows users to search for relevant text documents stored in a specified folder. It uses **TF-IDF (Term Frequency-Inverse Document Frequency)** and **Cosine Similarity** to rank documents based on their relevance to the user's search query.
 
----
+## Features
+- Reads and processes all **.txt** files from a specified folder.
+- Preprocesses text by **tokenizing, lowercasing, and removing stopwords**.
+- Uses **TF-IDF vectorization** to represent documents numerically.
+- Computes **Cosine Similarity** to rank documents based on relevance to the query.
+- Returns the **top 5 most relevant documents**.
 
-# **Smart Document Retrieval System**  
-
-## **Overview**  
-The **Smart Document Retrieval System** is a simple yet powerful search engine that retrieves the most relevant documents based on user queries. It utilizes **Information Retrieval (IR) techniques** such as **TF-IDF** and **cosine similarity** to rank and fetch documents efficiently with regards to the data present
-
----
-
-## **Features**  
-✅ **Text Preprocessing**: Tokenization, stopword removal, and stemming  
-✅ **TF-IDF Vectorization**: Converts text into numerical vectors  
-✅ **Cosine Similarity Matching**: Ranks documents based on query relevance  
-✅ **Web Interface**: User-friendly search interface using **Flask or Streamlit**  
-✅ **Result Ranking**: Displays the most relevant documents with similarity scores  
-
----
-
-## **Tech Stack**  
-- **Programming Language**: Python  
-- **Libraries**:  
-  - `scikit-learn` (TF-IDF & similarity)  
-  - `nltk` (Natural Language Processing)  
-  - `pandas` (Data Handling)  
-  - `Flask` or `Streamlit` (Web UI)  
-- **Data Source**: Wikipedia articles, news articles, or custom datasets  
-
----
-
-## **Project Structure**  
+## Prerequisites
+Ensure you have Python installed along with the required dependencies:
+```sh
+pip install numpy pandas scikit-learn nltk
 ```
-📂 Smart-Document-Retrieval
-│── 📂 data  
-│   ├── documents.txt  (Text documents to search from)
-│── 📂 static  (For UI assets if needed)
-│── 📂 templates  (For HTML files if using Flask)
-│── app.py  (Flask/Streamlit-based interface)
-│── search_engine.py  (Core logic: TF-IDF and cosine similarity)
-│── preprocess.py  (Text preprocessing: tokenization, stemming)
-│── requirements.txt  (Dependencies)
-│── README.md  (Project details)
+Additionally, download the required NLTK data:
+```sh
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
 ```
 
----
+## How It Works
+1. The program **loads** all `.txt` files from a specified folder.
+2. It **preprocesses** the text by removing stopwords, tokenizing, and converting to lowercase.
+3. It **vectorizes** the documents using **TF-IDF**.
+4. It **compares** the user's search query against the documents using **Cosine Similarity**.
+5. It **returns** the top 5 most relevant documents based on similarity scores.
 
-## **Installation & Setup**  
+## Usage
+1. Place your text documents in a folder (e.g., `documents`).
+2. Run the script:
+```sh
+python script.py
+```
+3. Enter a search query when prompted.
+4. The program will display the **top 5 relevant documents** along with their similarity scores.
 
-### **1️⃣ Clone the Repository**  
-```bash
-git clone https://github.com/your-username/Smart-Document-Retrieval.git
-cd Smart-Document-Retrieval
+## Example Output
+```
+Enter your search query: machine learning
+
+Top Relevant Documents:
+doc1.txt (Score: 0.8792)
+doc3.txt (Score: 0.7654)
+doc2.txt (Score: 0.6543)
+doc5.txt (Score: 0.5432)
+doc4.txt (Score: 0.4321)
 ```
 
-### **2️⃣ Install Dependencies**  
-```bash
-pip install -r requirements.txt
+## Folder Structure
+```
+Smart-Document-Retrieval/
+│-- documents/            # Folder containing text documents
+│-- script.py             # Main Python script
+│-- README.md             # Project documentation
 ```
 
-### **3️⃣ Run the Application**  
+## License
+This project is open-source and available for modification and distribution.
 
-#### **Using Flask**
-```bash
-python app.py
-```
-Now, open **http://127.0.0.1:5000/** in your browser.  
-
-#### **Using Streamlit**
-```bash
-streamlit run app.py
-```
+## Contribution
+Feel free to contribute by submitting issues or pull requests.
 
 ---
-
-## **How It Works**  
-1️⃣ **Preprocess Documents**:  
-   - Converts text to lowercase  
-   - Removes punctuation and stopwords  
-   - Tokenizes words  
-2️⃣ **Create TF-IDF Vectors**:  
-   - Converts text into numerical representation  
-3️⃣ **Compute Cosine Similarity**:  
-   - Finds the most relevant documents  
-4️⃣ **Display Top Results**:  
-   - Shows ranked documents with similarity scores  
-
----
-
-## **Example Usage**  
-### **Input Query**  
-> "Artificial Intelligence and Machine Learning"  
-
-### **Output (Top 3 Results)**  
-1️⃣ **"Introduction to AI and ML"** (Score: 0.87)  
-2️⃣ **"Deep Learning Advances in AI"** (Score: 0.75)  
-3️⃣ **"AI in Business and Healthcare"** (Score: 0.72)  
-
----
-
-## **Future Enhancements**  
-🔹 Implement **BM25 Ranking** instead of TF-IDF  
-🔹 Add **FastAPI** for better scalability  
-🔹 Use **BERT embeddings** for more accurate retrieval  
-
----
-
-## **Contributing**  
-Contributions are welcome! If you’d like to improve the project:  
-1️⃣ Fork the repository  
-2️⃣ Create a new branch (`feature-new-functionality`)  
-3️⃣ Commit your changes and push  
-4️⃣ Create a **Pull Request**  
-
----
-
-## **License**  
-This project is open-source and licensed under the **MIT License**.  
-
----
+Happy Searching! 🚀
 
